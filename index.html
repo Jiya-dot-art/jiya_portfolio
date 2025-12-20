@@ -13,7 +13,8 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#education">Education</a>
-            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -26,21 +27,18 @@
         I’m building skills in frontend, backend, and AI to achieve my dream of becoming a top engineer and entrepreneur.  
         Currently preparing for pursuing higher studies while also working on coding and personal projects.</p>
         <div class="social-icons">
-       <a href="#"><i class='bx bxl-linkedin'></i></a>
-       <a href="#"><i class='bx bxl-github'></i></a>
-       <a href="#"><i class='bx bxl-instagram'></i></a>
-       <a href="#"><i class='bx bxl-twitter'></i></a>
+       <a href="https://www.linkedin.com/in/jiya-adbhute-6b5b14382/"><i class='bx bxl-linkedin'></i></a>
+       <a href="https://github.com/Jiya-dot-art"><i class='bx bxl-github'></i></a>
+      
         </div>
        
        <div class="btn-group">
-        <a href="#" class="btn">Hire</a>
+        <a href="mailto:jadbhute06@gmail.com" class="btn">Hire</a>
         <a href="#contact" class="btn">Contact</a>
     
 </div>
        </div>
-       <div class="home-img">
-        <img src="8000-210_138676-7714.jpg" alt="">
-       </div>
+       
     
        </div>
     </section>
@@ -69,7 +67,7 @@
                 
         </div>
     </section>
-    <section class="services" id="services">
+    <section class="skills" id="skills">
         <h2 class="heading">Skills</h2>
         <div class="services-container">
             <div class="service-box">
@@ -92,7 +90,7 @@
             </div>
             
         </div>
-        <section class="services" id="projects">
+        <section class="projects" id="projects">
     <h2 class="heading">Projects</h2>
     <div class="services-container">
       <div class="service-box">
@@ -107,38 +105,68 @@
           <p>This responsive resume website showcasing my skills, education, and journey.</p>
         </div>
       </div>
+      <div class="service-box">
+        <div class="service-info">
+          <h4>Python Resume Builder</h4>
+          <p>Build a mini resume-builder using Python.</p>
+        </div>
+      </div>
     </div>
   </section>
 
     </section>
     <section id="contact">
-    <div class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-        <form action="">
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email"placeholder="Email">
-                </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="Subject">
-                </div>
-                <div class="input-group-2">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send Message" class="btn">
-                </div>
-            </div>
-        </form>
-    </div>
-    </section>
+  <div class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
+    <form id="contact-form">
+      <div class="input-group">
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+          <input type="text" name="phone" placeholder="Phone Number">
+          <input type="text" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="input-group-2">
+          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+          <input type="submit" value="Send Message" class="btn">
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- EmailJS Integration -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your Public Key
+  emailjs.init("ofRx9aAm2uQ-TejLi");
+
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // prevent default form submission
+
+    // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with actual IDs from EmailJS
+    emailjs.sendForm("service_jmfyblj", "template_uorsdrf", this)
+      .then(() => {
+        alert("Message sent successfully!");
+        form.reset(); // optional: clear form after submission
+      })
+      .catch(err => {
+        alert("Failed to send message. Please try again later.");
+        console.error(err);
+      });
+  });
+</script>
+
 </section>
     <footer class="footer">
         <div class="social">
-            <a href="#"><i class='bx bxl-linkedin' id="logo_"></i></a>
-            <a href="#"><i class='bx bxl-github' id="logo_"></i></a>
-            <a href="#"><i class='bx bxl-instagram'id="logo_"></i></a>
-            <a href="#"><i class='bx bxl-twitter'id="logo_"></i></a>
+            <a href="https://www.linkedin.com/in/jiya-adbhute-6b5b14382/"><i class='bx bxl-linkedin' id="logo_"></i></a>
+            <a href="https://github.com/Jiya-dot-art"><i class='bx bxl-github' id="logo_"></i></a>
+            
         </div><br>
         <p class="copyright"></p>
         © Jiya Adbhute | All Rights Reserved
@@ -148,6 +176,5 @@
 
   </script>  
 </body>
-
 
 </html>
