@@ -10,7 +10,7 @@ My personal developer portfolio showcasing my projects, skills, and achievements
 ## Tech Stack
 - HTML
 - CSS
-- JavaScript
+
 
 
 
